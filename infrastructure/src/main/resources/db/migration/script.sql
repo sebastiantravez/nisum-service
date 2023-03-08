@@ -27,7 +27,7 @@ CREATE TABLE expression_configs (
 	name varchar(150) NOT NULL,
 	description varchar(100) NOT NULL,
 	pattern varchar(100) NOT NULL,
-	CONSTRAINT global_configurations_pkey PRIMARYsss KEY (id),
+	CONSTRAINT global_configurations_pkey PRIMARY KEY (id),
 	CONSTRAINT global_configurations_name UNIQUE (name)
 );
 
