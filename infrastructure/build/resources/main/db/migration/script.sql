@@ -27,12 +27,13 @@ CREATE TABLE expression_configs (
 	name varchar(150) NOT NULL,
 	description varchar(100) NOT NULL,
 	pattern varchar(100) NOT NULL,
-	CONSTRAINT global_configurations_pkey PRIMARY KEY (id),
+	CONSTRAINT global_configurations_pkey PRIMARYsss KEY (id),
 	CONSTRAINT global_configurations_name UNIQUE (name)
 );
 
-INSERT INTO expression_configs ( name, description, pattern)
+INSERT INTO expression_configs (name, description, pattern)
 	   VALUES('PASSWORD_REGULAR_EXPRESSION', 'Pattern that validate password', '^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$');
 
 INSERT INTO expression_configs (name, description, pattern)
 	   VALUES('EMAIL_REGULAR_EXPRESSION', 'Pattern that validate email', '^[^@]+@[^@]+\.[a-zA-Z]{2,}$');
+

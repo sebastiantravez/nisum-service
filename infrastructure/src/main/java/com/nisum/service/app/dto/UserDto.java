@@ -23,11 +23,11 @@ public class UserDto {
     private String email;
     @NotNull
     private String password;
-    @JsonFormat(pattern = "dd-MM-yyyy HH.mm.ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime created;
-    @JsonFormat(pattern = "dd-MM-yyyy HH.mm.ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime modified;
-    @JsonFormat(pattern = "dd-MM-yyyy HH.mm.ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Builder.Default
     private LocalDateTime lastLogin = LocalDateTime.now();
     @Builder.Default

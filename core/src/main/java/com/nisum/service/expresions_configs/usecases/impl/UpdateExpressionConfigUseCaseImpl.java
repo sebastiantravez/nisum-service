@@ -18,8 +18,11 @@ public class UpdateExpressionConfigUseCaseImpl implements UpdateExpressionConfig
     @Override
     public ExpressionConfigsCore execute(UUID configId, ExpressionConfigsCore expressionConfigsCore) {
         ExpressionConfigsCore configsCore = expressionConfigsDomain.getExpressionConfigById(configId)
-                .orElseThrow(() -> new ExpressionConfigException("Registro no existe"));
-        return expressionConfigsDomain.update(expressionConfigsCore);
+                .orElseThrow(() -> new ExpressionConfigException("Error: Registro no existe"));
+        configsCore.setName(expressionConfigsCore.getName());
+        configsCore.setDescription(expressionConfigsCore.getDescription());
+        configsCore.setPattern(expressionConfigsCore.getPattern());
+        return expressionConfigsDomain.update(configsCore);
     }
 
 }

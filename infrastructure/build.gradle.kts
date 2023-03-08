@@ -27,6 +27,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.modelmapper:modelmapper:2.4.4")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
     implementation("org.flywaydb:flyway-core")
     implementation("com.auth0:java-jwt:3.8.2")
     compileOnly("org.projectlombok:lombok")
