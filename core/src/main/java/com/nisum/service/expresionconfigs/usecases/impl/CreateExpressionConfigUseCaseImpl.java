@@ -1,9 +1,9 @@
-package com.nisum.service.expresions_configs.usecases.impl;
+package com.nisum.service.expresionconfigs.usecases.impl;
 
-import com.nisum.service.expresions_configs.entities.ExpressionConfigsCore;
-import com.nisum.service.expresions_configs.exception.ExpressionConfigException;
-import com.nisum.service.expresions_configs.ports.ExpressionConfigsDomain;
-import com.nisum.service.expresions_configs.usecases.api.CreateExpressionConfigUseCase;
+import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
+import com.nisum.service.expresionconfigs.exception.ExpressionConfigException;
+import com.nisum.service.expresionconfigs.ports.ExpressionConfigsDomain;
+import com.nisum.service.expresionconfigs.usecases.api.CreateExpressionConfigUseCase;
 
 import java.util.Optional;
 

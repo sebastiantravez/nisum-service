@@ -1,6 +1,6 @@
-package com.nisum.service.expresions_configs.ports;
+package com.nisum.service.expresionconfigs.ports;
 
-import com.nisum.service.expresions_configs.entities.ExpressionConfigsCore;
+import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.nisum.service.expresions_configs.usecases.api;
+package com.nisum.service.expresionconfigs.usecases.api;
 
-import com.nisum.service.expresions_configs.entities.ExpressionConfigsCore;
+import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
 
 import java.util.UUID;
 

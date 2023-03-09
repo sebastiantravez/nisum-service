@@ -1,14 +1,12 @@
 package com.nisum.service.app.services;
 
 import com.nisum.service.app.entities.ExpressionConfigs;
-import com.nisum.service.app.exceptions.GenericException;
 import com.nisum.service.app.repository.ExpressionConfigRepository;
-import com.nisum.service.expresions_configs.entities.ExpressionConfigsCore;
-import com.nisum.service.expresions_configs.ports.ExpressionConfigsDomain;
+import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
+import com.nisum.service.expresionconfigs.ports.ExpressionConfigsDomain;
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

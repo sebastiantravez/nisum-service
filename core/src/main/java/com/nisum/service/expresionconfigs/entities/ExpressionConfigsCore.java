@@ -1,4 +1,4 @@
-package com.nisum.service.expresions_configs.entities;
+package com.nisum.service.expresionconfigs.entities;
 
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
 

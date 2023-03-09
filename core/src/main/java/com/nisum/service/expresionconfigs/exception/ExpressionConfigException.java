@@ -1,4 +1,4 @@
-package com.nisum.service.expresions_configs.exception;
+package com.nisum.service.expresionconfigs.exception;
 
 public class ExpressionConfigException extends RuntimeException {
 

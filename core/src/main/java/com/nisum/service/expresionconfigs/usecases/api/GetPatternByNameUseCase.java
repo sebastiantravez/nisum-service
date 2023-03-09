@@ -1,4 +1,4 @@
-package com.nisum.service.expresions_configs.usecases.api;
+package com.nisum.service.expresionconfigs.usecases.api;
 
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
 

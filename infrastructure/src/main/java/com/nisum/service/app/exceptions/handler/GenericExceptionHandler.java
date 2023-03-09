@@ -2,7 +2,7 @@ package com.nisum.service.app.exceptions.handler;
 
 import com.nisum.service.app.exceptions.ExceptionResponse;
 import com.nisum.service.app.exceptions.GenericException;
-import com.nisum.service.expresions_configs.exception.ExpressionConfigException;
+import com.nisum.service.expresionconfigs.exception.ExpressionConfigException;
 import com.nisum.service.user.exception.UserException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

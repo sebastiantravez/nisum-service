@@ -2,10 +2,10 @@ package com.nisum.service.app.controller;
 
 import com.nisum.service.app.dto.ExpressionConfigDto;
 import com.nisum.service.app.utils.GlobalMapper;
-import com.nisum.service.expresions_configs.entities.ExpressionConfigsCore;
-import com.nisum.service.expresions_configs.usecases.api.CreateExpressionConfigUseCase;
-import com.nisum.service.expresions_configs.usecases.api.GetAllExpressionUseCase;
-import com.nisum.service.expresions_configs.usecases.api.UpdateExpressionConfigUseCase;
+import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
+import com.nisum.service.expresionconfigs.usecases.api.CreateExpressionConfigUseCase;
+import com.nisum.service.expresionconfigs.usecases.api.GetAllExpressionUseCase;
+import com.nisum.service.expresionconfigs.usecases.api.UpdateExpressionConfigUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

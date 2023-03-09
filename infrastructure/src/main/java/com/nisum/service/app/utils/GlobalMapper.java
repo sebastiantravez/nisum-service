@@ -2,7 +2,7 @@ package com.nisum.service.app.utils;
 
 import com.nisum.service.app.dto.ExpressionConfigDto;
 import com.nisum.service.app.dto.UserDto;
-import com.nisum.service.expresions_configs.entities.ExpressionConfigsCore;
+import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
 import com.nisum.service.user.entities.UserCore;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

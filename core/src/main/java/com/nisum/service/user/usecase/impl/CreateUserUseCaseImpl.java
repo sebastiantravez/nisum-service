@@ -1,6 +1,6 @@
 package com.nisum.service.user.usecase.impl;
 
-import com.nisum.service.expresions_configs.usecases.api.GetPatternByNameUseCase;
+import com.nisum.service.expresionconfigs.usecases.api.GetPatternByNameUseCase;
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
 import com.nisum.service.user.entities.UserCore;
 import com.nisum.service.user.exception.UserException;
