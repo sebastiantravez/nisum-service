@@ -8,7 +8,7 @@ Descargar las dependencias del build.gradle.
 
 El proyecto fue desarrollado con flyway para la creacion de tablas y carga de datos iniciales, dentro del archivo: /resources/db/migration/V1.0__create_tables.sql se encuentran el script para creacion de tablas y carga de datos iniciales.
 
-El proyecto se despliega en el puerto 8080 de acuerdo a la configuración en el archivo application.yml.
+El proyecto se despliega en el puerto 8080 de acuerdo a la configuración en el archivo application.properties
 
 El contextPath de la app esta configurado con el valor /api.
 
