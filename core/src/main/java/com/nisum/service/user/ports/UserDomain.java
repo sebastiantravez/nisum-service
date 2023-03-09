@@ -13,4 +13,6 @@ public interface UserDomain {
     Optional<UserCore> getUserByEmail(String email);
 
     UserCore update(UUID userId, UserCore userCore);
+
+    void deleteUserById(UUID userId);
 }

@@ -47,4 +47,9 @@ public class UserService implements UserDomain {
         User user = userRepository.save(modelMapper.map(userCore, User.class));
         return modelMapper.map(user, UserCore.class);
     }
+
+    @Override
+    public void deleteUserById(UUID userId) {
+        userRepository.deleteById(userId);
+    }
 }

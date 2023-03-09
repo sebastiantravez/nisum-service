@@ -12,9 +12,13 @@ import com.nisum.service.expresionconfigs.usecases.impl.GetPatternByNameUseCaseI
 import com.nisum.service.expresionconfigs.usecases.impl.UpdateExpressionConfigUseCaseImpl;
 import com.nisum.service.user.ports.UserDomain;
 import com.nisum.service.user.usecase.api.CreateUserUseCase;
+import com.nisum.service.user.usecase.api.DeleteUserByIdUseCase;
 import com.nisum.service.user.usecase.api.GetUserByIdUseCase;
+import com.nisum.service.user.usecase.api.UpdateUserUseCase;
 import com.nisum.service.user.usecase.impl.CreateUserUseCaseImpl;
+import com.nisum.service.user.usecase.impl.DeleteUserByIdUseCaseImpl;
 import com.nisum.service.user.usecase.impl.GetUserByIdUseCaseImpl;
+import com.nisum.service.user.usecase.impl.UpdateUserUseCaseImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -62,5 +66,15 @@ public class NisumServiceConfig {
     @Bean
     public GetUserByIdUseCase getUserByIdUseCase(UserDomain userDomain) {
         return new GetUserByIdUseCaseImpl(userDomain);
+    }
+
+    @Bean
+    public UpdateUserUseCase updateUserUseCase(UserDomain userDomain, GetPatternByNameUseCase getPatternByNameUseCase) {
+        return new UpdateUserUseCaseImpl(userDomain, getPatternByNameUseCase);
+    }
+
+    @Bean
+    public DeleteUserByIdUseCase deleteUserByIdUseCase(UserDomain userDomain) {
+        return new DeleteUserByIdUseCaseImpl(userDomain);
     }
 }
