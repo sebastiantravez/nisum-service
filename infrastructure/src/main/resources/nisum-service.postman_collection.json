@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "c1b9f242-53c3-4dd5-a604-04aedd7d4d1c",
+		"name": "nisum-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13691506"
+	},
+	"item": [
+		{
+			"name": "create expression email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EMAIL_REGULAR_EXPRESSION\",\n    \"pattern\": \"^[^@]+@[^@]+\\\\.[a-zA-Z]{2,}$\",\n    \"description\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/createExpression",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createExpression"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllExpressions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/getAllExpressions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getAllExpressions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update expression",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EMAIL_REGULAR_EXPRESSION\",\n    \"pattern\": \"^[^@]+@[^@]+\\\\.[a-zA-Z]{2,}$\",\n    \"description\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/updateExpressionConfig/aab7d935-55a2-4c27-8a05-5ed237126a11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"updateExpressionConfig",
+						"aab7d935-55a2-4c27-8a05-5ed237126a11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\":\"Juan Rodriguez\",\n   \"email\":\"2testa@pruebas.com\",\n   \"password\":\"Tjsd767324.23\",\n   \"phones\":[\n      {\n         \"number\":\"0999829546\",\n         \"citycode\":\"120021\",\n         \"contrycode\":\"593\"\n      }\n   ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create expresion password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"PASSWORD_REGULAR_EXPRESSION\",\n    \"pattern\": \"^(?=\\\\w*\\\\d)(?=\\\\w*[A-Z])(?=\\\\w*[a-z])\\\\S{8,16}$\",\n    \"description\": \"pasword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/createExpression",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createExpression"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/getUser/7d2097c9-268f-4c83-a165-07e236f832e8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getUser",
+						"7d2097c9-268f-4c83-a165-07e236f832e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\":\"Juan Rodriguez\",\n   \"email\":\"2test@pruebas.com\",\n   \"password\":\"Fangiolq123.\",\n   \"phones\":[\n      {\n         \"number\":\"0999829546\",\n         \"citycode\":\"120021\",\n         \"contrycode\":\"593\"\n      }\n   ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/updateUser/602bb47e-a064-4171-a2ae-e31551f82e4f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"updateUser",
+						"602bb47e-a064-4171-a2ae-e31551f82e4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/deleteUser/345d7773-40ec-42af-b85d-98c0966abe6d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deleteUser",
+						"345d7773-40ec-42af-b85d-98c0966abe6d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
