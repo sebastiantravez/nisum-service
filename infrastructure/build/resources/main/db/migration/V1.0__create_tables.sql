@@ -36,4 +36,3 @@ INSERT INTO expression_configs (name, description, pattern)
 
 INSERT INTO expression_configs (name, description, pattern)
 	   VALUES('EMAIL_REGULAR_EXPRESSION', 'Pattern that validate email', '^[^@]+@[^@]+\.[a-zA-Z]{2,}$');
-
