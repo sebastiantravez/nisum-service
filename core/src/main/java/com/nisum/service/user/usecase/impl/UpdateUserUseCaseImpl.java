@@ -7,6 +7,7 @@ import com.nisum.service.user.ports.persistence.UserCoreRepository;
 import com.nisum.service.user.usecase.api.UpdateUserUseCase;
 import com.nisum.service.user.utils.ValidateUser;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -28,6 +29,7 @@ public class UpdateUserUseCaseImpl extends ValidateUser implements UpdateUserUse
         userCoreOptional.get().setName(userCore.getName());
         userCoreOptional.get().setEmail(userCore.getEmail());
         userCoreOptional.get().setPassword(userCore.getPassword());
+        userCoreOptional.get().setModified(LocalDateTime.now());
         userCoreOptional.get().getPhones().clear();
         userCoreOptional.get().setPhones(userCore.getPhones());
         validateUserData(userCoreOptional.get());
