@@ -1,4 +1,4 @@
-package com.nisum.service.utils;
+package com.nisum.service.user.utils;
 
 import com.nisum.service.expresionconfigs.usecases.api.GetPatternByNameUseCase;
 import com.nisum.service.shared.enums.ExpressionConfigEnum;

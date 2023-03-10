@@ -5,7 +5,7 @@ import com.nisum.service.user.entities.UserCore;
 import com.nisum.service.user.exception.UserException;
 import com.nisum.service.user.ports.persistence.UserCoreRepository;
 import com.nisum.service.user.usecase.api.UpdateUserUseCase;
-import com.nisum.service.utils.ValidateUser;
+import com.nisum.service.user.utils.ValidateUser;
 
 import java.util.Optional;
 import java.util.UUID;
