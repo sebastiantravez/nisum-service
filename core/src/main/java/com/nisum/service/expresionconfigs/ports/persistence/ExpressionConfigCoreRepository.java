@@ -1,4 +1,4 @@
-package com.nisum.service.expresionconfigs.ports;
+package com.nisum.service.expresionconfigs.ports.persistence;
 
 import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface ExpressionConfigsDomain {
+public interface ExpressionConfigCoreRepository {
     ExpressionConfigsCore save(ExpressionConfigsCore expressionConfigsCore);
 
     List<ExpressionConfigsCore> getAll();

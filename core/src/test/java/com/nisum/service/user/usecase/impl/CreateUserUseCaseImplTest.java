@@ -5,7 +5,7 @@ import com.nisum.service.expresionconfigs.usecases.api.GetPatternByNameUseCase;
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
 import com.nisum.service.user.entities.UserCore;
 import com.nisum.service.user.exception.UserException;
-import com.nisum.service.user.ports.UserDomain;
+import com.nisum.service.user.ports.persistence.UserCoreRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -28,7 +28,7 @@ class CreateUserUseCaseImplTest {
     private CreateUserUseCaseImpl createUserUseCase;
 
     @Mock
-    private UserDomain userDomain;
+    private UserCoreRepository userCoreRepository;
 
     @Mock
     private GetPatternByNameUseCase getPatternByNameUseCase;
@@ -37,7 +37,7 @@ class CreateUserUseCaseImplTest {
     void shouldCreateUser() {
         when(getPatternByNameUseCase.execute(ExpressionConfigEnum.EMAIL_REGULAR_EXPRESSION)).thenReturn("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$");
         when(getPatternByNameUseCase.execute(ExpressionConfigEnum.PASSWORD_REGULAR_EXPRESSION)).thenReturn("^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$");
-        when(userDomain.getUserByEmail(any())).thenReturn(Optional.empty());
+        when(userCoreRepository.getUserByEmail(any())).thenReturn(Optional.empty());
         UserCore userCore = new UserCore();
         userCore.setName("Sebas");
         userCore.setEmail("sebastiantravez@gmail.com");
@@ -46,14 +46,14 @@ class CreateUserUseCaseImplTest {
         userCore.setLastLogin(LocalDateTime.now());
         userCore.setModified(LocalDateTime.now());
         createUserUseCase.execute(userCore);
-        verify(userDomain).getUserByEmail(any());
+        verify(userCoreRepository).getUserByEmail(any());
     }
 
     @Test
     void shouldCreateUserExceptionEmailInvalid() {
         when(getPatternByNameUseCase.execute(ExpressionConfigEnum.EMAIL_REGULAR_EXPRESSION)).thenReturn("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$");
         when(getPatternByNameUseCase.execute(ExpressionConfigEnum.PASSWORD_REGULAR_EXPRESSION)).thenReturn("^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$");
-        when(userDomain.getUserByEmail(any())).thenReturn(Optional.empty());
+        when(userCoreRepository.getUserByEmail(any())).thenReturn(Optional.empty());
         UserCore userCore = new UserCore();
         userCore.setName("Sebas");
         userCore.setEmail("sebastiantravez@");
@@ -65,7 +65,7 @@ class CreateUserUseCaseImplTest {
             createUserUseCase.execute(userCore);
         });
         assertEquals(exception.getMessage(), "Error: El email no cumple el formato establecido");
-        verify(userDomain).getUserByEmail(any());
+        verify(userCoreRepository).getUserByEmail(any());
     }
 
 }

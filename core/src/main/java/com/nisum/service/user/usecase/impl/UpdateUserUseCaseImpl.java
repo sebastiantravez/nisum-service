@@ -3,7 +3,7 @@ package com.nisum.service.user.usecase.impl;
 import com.nisum.service.expresionconfigs.usecases.api.GetPatternByNameUseCase;
 import com.nisum.service.user.entities.UserCore;
 import com.nisum.service.user.exception.UserException;
-import com.nisum.service.user.ports.UserDomain;
+import com.nisum.service.user.ports.persistence.UserCoreRepository;
 import com.nisum.service.user.usecase.api.UpdateUserUseCase;
 import com.nisum.service.utils.ValidateUser;
 
@@ -12,16 +12,16 @@ import java.util.UUID;
 
 public class UpdateUserUseCaseImpl extends ValidateUser implements UpdateUserUseCase {
 
-    private final UserDomain userDomain;
+    private final UserCoreRepository userCoreRepository;
 
-    public UpdateUserUseCaseImpl(UserDomain userDomain, GetPatternByNameUseCase getPatternByNameUseCase) {
+    public UpdateUserUseCaseImpl(UserCoreRepository userCoreRepository, GetPatternByNameUseCase getPatternByNameUseCase) {
         super(getPatternByNameUseCase);
-        this.userDomain = userDomain;
+        this.userCoreRepository = userCoreRepository;
     }
 
     @Override
     public UserCore execute(UUID userId, UserCore userCore) {
-        Optional<UserCore> userCoreOptional = userDomain.getUserById(userId);
+        Optional<UserCore> userCoreOptional = userCoreRepository.getUserById(userId);
 
         if (userCoreOptional.isEmpty()) throw new UserException("Error: El usuario no existe, no se puede actualizar");
 
@@ -32,10 +32,10 @@ public class UpdateUserUseCaseImpl extends ValidateUser implements UpdateUserUse
         userCoreOptional.get().setPhones(userCore.getPhones());
         validateUserData(userCoreOptional.get());
 
-        Optional<UserCore> findUserEmail = userDomain.getUserByEmail(userCoreOptional.get().getEmail());
+        Optional<UserCore> findUserEmail = userCoreRepository.getUserByEmail(userCoreOptional.get().getEmail());
         if (findUserEmail.isPresent() && !findUserEmail.get().getId().equals(userId)) throw new UserException("Error: El email ya se encuentra registrado");
 
-        return userDomain.save(userCoreOptional.get());
+        return userCoreRepository.save(userCoreOptional.get());
     }
 
 }

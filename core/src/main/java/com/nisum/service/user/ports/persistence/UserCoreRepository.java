@@ -1,11 +1,11 @@
-package com.nisum.service.user.ports;
+package com.nisum.service.user.ports.persistence;
 
 import com.nisum.service.user.entities.UserCore;
 
 import java.util.Optional;
 import java.util.UUID;
 
-public interface UserDomain {
+public interface UserCoreRepository {
     UserCore save(UserCore userCore);
 
     Optional<UserCore> getUserById(UUID userId);

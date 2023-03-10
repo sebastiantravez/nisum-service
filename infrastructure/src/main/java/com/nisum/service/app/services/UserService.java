@@ -4,7 +4,7 @@ import com.nisum.service.app.entities.User;
 import com.nisum.service.app.repository.UserRepository;
 import com.nisum.service.app.utils.JwtToken;
 import com.nisum.service.user.entities.UserCore;
-import com.nisum.service.user.ports.UserDomain;
+import com.nisum.service.user.ports.persistence.UserCoreRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class UserService implements UserDomain {
+public class UserService implements UserCoreRepository {
 
     @Autowired
     private UserRepository userRepository;

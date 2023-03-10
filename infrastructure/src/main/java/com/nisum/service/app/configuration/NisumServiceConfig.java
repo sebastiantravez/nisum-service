@@ -1,7 +1,7 @@
 package com.nisum.service.app.configuration;
 
 import com.nisum.service.app.utils.GlobalMapper;
-import com.nisum.service.expresionconfigs.ports.ExpressionConfigsDomain;
+import com.nisum.service.expresionconfigs.ports.persistence.ExpressionConfigCoreRepository;
 import com.nisum.service.expresionconfigs.usecases.api.CreateExpressionConfigUseCase;
 import com.nisum.service.expresionconfigs.usecases.api.GetAllExpressionUseCase;
 import com.nisum.service.expresionconfigs.usecases.api.GetPatternByNameUseCase;
@@ -10,7 +10,7 @@ import com.nisum.service.expresionconfigs.usecases.impl.CreateExpressionConfigUs
 import com.nisum.service.expresionconfigs.usecases.impl.GetAllExpressionUseCaseImpl;
 import com.nisum.service.expresionconfigs.usecases.impl.GetPatternByNameUseCaseImpl;
 import com.nisum.service.expresionconfigs.usecases.impl.UpdateExpressionConfigUseCaseImpl;
-import com.nisum.service.user.ports.UserDomain;
+import com.nisum.service.user.ports.persistence.UserCoreRepository;
 import com.nisum.service.user.usecase.api.CreateUserUseCase;
 import com.nisum.service.user.usecase.api.DeleteUserByIdUseCase;
 import com.nisum.service.user.usecase.api.GetUserByIdUseCase;
@@ -39,42 +39,42 @@ public class NisumServiceConfig {
     }
 
     @Bean
-    public CreateExpressionConfigUseCase createExpressionConfigUseCase(ExpressionConfigsDomain expressionConfigsDomain) {
-        return new CreateExpressionConfigUseCaseImpl(expressionConfigsDomain);
+    public CreateExpressionConfigUseCase createExpressionConfigUseCase(ExpressionConfigCoreRepository expressionConfigCoreRepository) {
+        return new CreateExpressionConfigUseCaseImpl(expressionConfigCoreRepository);
     }
 
     @Bean
-    public GetAllExpressionUseCase getAllExpressionUseCase(ExpressionConfigsDomain expressionConfigsDomain) {
-        return new GetAllExpressionUseCaseImpl(expressionConfigsDomain);
+    public GetAllExpressionUseCase getAllExpressionUseCase(ExpressionConfigCoreRepository expressionConfigCoreRepository) {
+        return new GetAllExpressionUseCaseImpl(expressionConfigCoreRepository);
     }
 
     @Bean
-    public UpdateExpressionConfigUseCase updateExpressionConfigUseCase(ExpressionConfigsDomain expressionConfigsDomain) {
-        return new UpdateExpressionConfigUseCaseImpl(expressionConfigsDomain);
+    public UpdateExpressionConfigUseCase updateExpressionConfigUseCase(ExpressionConfigCoreRepository expressionConfigCoreRepository) {
+        return new UpdateExpressionConfigUseCaseImpl(expressionConfigCoreRepository);
     }
 
     @Bean
-    public GetPatternByNameUseCase getPatternByNameUseCase(ExpressionConfigsDomain expressionConfigsDomain) {
-        return new GetPatternByNameUseCaseImpl(expressionConfigsDomain);
+    public GetPatternByNameUseCase getPatternByNameUseCase(ExpressionConfigCoreRepository expressionConfigCoreRepository) {
+        return new GetPatternByNameUseCaseImpl(expressionConfigCoreRepository);
     }
 
     @Bean
-    public CreateUserUseCase createUserUseCase(UserDomain userDomain, GetPatternByNameUseCase getPatternByNameUseCase) {
-        return new CreateUserUseCaseImpl(userDomain, getPatternByNameUseCase);
+    public CreateUserUseCase createUserUseCase(UserCoreRepository userCoreRepository, GetPatternByNameUseCase getPatternByNameUseCase) {
+        return new CreateUserUseCaseImpl(userCoreRepository, getPatternByNameUseCase);
     }
 
     @Bean
-    public GetUserByIdUseCase getUserByIdUseCase(UserDomain userDomain) {
-        return new GetUserByIdUseCaseImpl(userDomain);
+    public GetUserByIdUseCase getUserByIdUseCase(UserCoreRepository userCoreRepository) {
+        return new GetUserByIdUseCaseImpl(userCoreRepository);
     }
 
     @Bean
-    public UpdateUserUseCase updateUserUseCase(UserDomain userDomain, GetPatternByNameUseCase getPatternByNameUseCase) {
-        return new UpdateUserUseCaseImpl(userDomain, getPatternByNameUseCase);
+    public UpdateUserUseCase updateUserUseCase(UserCoreRepository userCoreRepository, GetPatternByNameUseCase getPatternByNameUseCase) {
+        return new UpdateUserUseCaseImpl(userCoreRepository, getPatternByNameUseCase);
     }
 
     @Bean
-    public DeleteUserByIdUseCase deleteUserByIdUseCase(UserDomain userDomain) {
-        return new DeleteUserByIdUseCaseImpl(userDomain);
+    public DeleteUserByIdUseCase deleteUserByIdUseCase(UserCoreRepository userCoreRepository) {
+        return new DeleteUserByIdUseCaseImpl(userCoreRepository);
     }
 }

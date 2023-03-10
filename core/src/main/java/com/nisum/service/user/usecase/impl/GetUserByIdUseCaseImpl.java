@@ -2,21 +2,21 @@ package com.nisum.service.user.usecase.impl;
 
 import com.nisum.service.user.entities.UserCore;
 import com.nisum.service.user.exception.UserException;
-import com.nisum.service.user.ports.UserDomain;
+import com.nisum.service.user.ports.persistence.UserCoreRepository;
 import com.nisum.service.user.usecase.api.GetUserByIdUseCase;
 
 import java.util.UUID;
 
 public class GetUserByIdUseCaseImpl implements GetUserByIdUseCase {
 
-    private final UserDomain userDomain;
+    private final UserCoreRepository userCoreRepository;
 
-    public GetUserByIdUseCaseImpl(UserDomain userDomain) {
-        this.userDomain = userDomain;
+    public GetUserByIdUseCaseImpl(UserCoreRepository userCoreRepository) {
+        this.userCoreRepository = userCoreRepository;
     }
 
     @Override
     public UserCore execute(UUID userId) {
-        return userDomain.getUserById(userId).orElseThrow(() -> new UserException("Error: El usuario no existe"));
+        return userCoreRepository.getUserById(userId).orElseThrow(() -> new UserException("Error: El usuario no existe"));
     }
 }

@@ -3,7 +3,7 @@ package com.nisum.service.app.services;
 import com.nisum.service.app.entities.ExpressionConfigs;
 import com.nisum.service.app.repository.ExpressionConfigRepository;
 import com.nisum.service.expresionconfigs.entities.ExpressionConfigsCore;
-import com.nisum.service.expresionconfigs.ports.ExpressionConfigsDomain;
+import com.nisum.service.expresionconfigs.ports.persistence.ExpressionConfigCoreRepository;
 import com.nisum.service.shared.enums.ExpressionConfigEnum;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class ExpressionConfigService implements ExpressionConfigsDomain {
+public class ExpressionConfigService implements ExpressionConfigCoreRepository {
 
     @Autowired
     private ExpressionConfigRepository expressionConfigRepository;
