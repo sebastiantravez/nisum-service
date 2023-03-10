@@ -7,6 +7,7 @@ public class PhoneCore {
     private String number;
     private String cityCode;
     private String countryCode;
+    private UserCore user;
 
     public PhoneCore() {
     }
@@ -48,5 +49,13 @@ public class PhoneCore {
 
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
+    }
+
+    public UserCore getUser() {
+        return user;
+    }
+
+    public void setUser(UserCore user) {
+        this.user = user;
     }
 }

@@ -25,7 +25,6 @@ public class UserService implements UserCoreRepository {
     public UserCore save(UserCore userCore) {
         User user = modelMapper.map(userCore, User.class);
         user.setToken(JwtToken.addToken(userCore));
-        user.getPhones().forEach(phone -> phone.setUser(user));
         userRepository.save(user);
         return modelMapper.map(user, UserCore.class);
     }

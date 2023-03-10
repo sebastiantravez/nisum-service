@@ -25,6 +25,7 @@ public class CreateUserUseCaseImpl extends ValidateUser implements CreateUserUse
         if (userCoreOptional.isPresent()) throw new UserException("Error: El email ya se encuentra registrado");
 
         validateUserData(userCore);
+        userCore.getPhones().forEach(phoneCore -> phoneCore.setUser(userCore));
 
         return userCoreRepository.save(userCore);
     }
