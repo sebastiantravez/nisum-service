@@ -15,7 +15,7 @@ public abstract class ValidateUser {
         this.getPatternByNameUseCase = getPatternByNameUseCase;
     }
 
-    public void validateUserData(UserCore userCore) {
+    protected void validateUserData(UserCore userCore) {
         if (isNullOrEmpty(userCore.getEmail())) {
             throw new UserException("Error: El usuario debe ingresar el email");
         }
@@ -32,7 +32,7 @@ public abstract class ValidateUser {
         }
     }
 
-    private boolean isNullOrEmpty(String str) {
+    protected boolean isNullOrEmpty(String str) {
         return str == null || str.trim().isEmpty();
     }
 
